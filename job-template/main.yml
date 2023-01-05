@@ -1,0 +1,11 @@
+stages:
+  - stage: stage_name
+    displayName: 'Stage Name'
+    pool: 'Azure Agent Pool Name'
+    jobs:
+      - job: job_name
+          displayName: 'Job Name'
+          steps:
+            - template: template.yml
+              parameters:
+                parameter1: value1
