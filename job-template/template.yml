@@ -1,0 +1,12 @@
+parameters:
+- name: parameter1
+  type: string
+  default: ""
+
+steps:
+    - checkout: none
+    - task: CmdLine@2
+      displayName: "Step Name"
+      inputs:
+        script: |
+          echo ${{ parameters.parameter1 }}
