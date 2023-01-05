@@ -1,0 +1,16 @@
+stages:
+  - stage: stage_name
+    displayName: 'Stage Name'
+    pool: 'Azure Agent Pool Name'
+    jobs:
+      - job: job_name
+        displayName: 'Job Name'
+        steps:
+          - task: AzureKeyVault@2
+            inputs:
+              azureSubscription: 'azure-subscription'
+              KeyVaultName: 'key-vault-name'
+              SecretsFilter: '*'
+          - bash: echo "do something"
+            env:
+              VAULT_TOKEN: $(vault-token)
